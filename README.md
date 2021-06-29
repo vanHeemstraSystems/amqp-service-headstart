@@ -7,6 +7,7 @@ Based on "Running a Ballerina Service in a Docker Container" at https://ballerin
 
 ## 100 - Prerequisites
 
+- Ballerina, see https://ballerina.io/1.2/learn/installing-ballerina/
 - Docker Engine
 - Docker Compose
 
