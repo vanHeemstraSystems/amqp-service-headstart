@@ -1,0 +1,4 @@
+/containers/amqp-service/docker-compose.yml
+/containers/amqp-service/docker-compose.logging.yml
+/containers/amqp-service/docker-compose.imaging.yml
+/containers/amqp-service/.env
