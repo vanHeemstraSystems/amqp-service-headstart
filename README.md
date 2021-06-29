@@ -117,6 +117,10 @@ service messages on consumerEP {
   }
 }
 ```
+containers/amqp-service/consumer/modules/http/http.bal
+
+
+
 
 more ...
 
@@ -186,10 +190,47 @@ containers/amqp-service/
 
 Our service will be called ```http.bal``` and will look as follows (note: EP = EndPoint):
 ```
+import ballerina/http;
+import ballerina/log;
+import ballerina/docker; ## not ballerinax/docker
 
+@docker:Expose {}
+listener http:Listener publisherEP = new(9091);
+map<json> messagesMap = {};
 
+@docker:Config {
+  Registry:"com.acme.publisher", name:"publisher", tag:"v1.0"
+}
+
+@http:ServiceConfig {
+  basePath: "/publisher"
+}
+
+service messages on publisherEP { 
+  @http:ResourceConfig {
+    methods: ["POST"], path: "/publisher"
+  }
+
+  resource function addMessage(http:Caller caller, http:Request req) {
+    http:Response response = new;
+    var publisherReq = req.getJsonPayload();
+    if (publisherReq is json) {
+      string messageId = publisherReq.message.id.toString();
+      messagesMap[messageId] = publisherReq;
+      response.statusCode = 201;
+      response.setHeader("Location", "http://localhost:9091/publisher/message/" + messageId);
+    } else {
+      response.statusCode = 400;
+      response.setPayload("Invalid payload received");
+    }
+    var result = caller->respond(response);
+    if (result is error) {
+      log:printError("Error sending response", err = result);
+    }
+  }
+}
 ```
-
+containers/amqp-service/publisher/modules/http/http.bal
 
 
 
