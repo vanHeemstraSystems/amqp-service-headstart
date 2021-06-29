@@ -34,6 +34,15 @@ Ballerina.toml
 .gitignore
 main.bal
 ```
+The directory structure is now as follows:
+```
+containers/amqp-service/
+  consumer (auto-created)
+    Ballerina.toml (auto-created)
+    .gitignore (auto-created)
+    main.bal (auto-created)
+```
+
 
 more ...
 
@@ -56,6 +65,15 @@ Ballerina.toml
 .gitignore
 main.bal
 ```
+The directory structure is now as follows:
+```
+containers/amqp-service/
+  publisher (auto-created)
+    Ballerina.toml (auto-created)
+    .gitignore (auto-created)
+    main.bal (auto-created)
+```
+
 
 more ...
 
