@@ -15,7 +15,33 @@ Based on "Running a Ballerina Service in a Docker Container" at https://ballerin
 
 ### 100 - WebUI
 
-### 200 - Service
+### 200 - Consumer
+
+We already have the project 'consumer' created, but if starting from fresh use the following command to create a new ballerina project (here: consumer):
+
+```
+$ cd containers/amqp-service/
+$ bal new consumer
+Created new Ballerina package 'consumer' at consumer.
+```
+
+
+more ...
+
+### 300 - Publisher
+
+We already have the project 'publisher' created, but if starting from fresh use the following command to create a new ballerina project (here: publisher):
+
+```
+$ cd containers/amqp-service/
+$ bal new publisher
+Created new Ballerina package 'publisher' at publisher.
+```
+
+
+more ...
+
+### 400 - Service = PENDING
 
 Sample Source Code:
 
