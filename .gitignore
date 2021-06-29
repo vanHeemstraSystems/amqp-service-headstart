@@ -2,3 +2,4 @@
 /containers/amqp-service/docker-compose.logging.yml
 /containers/amqp-service/docker-compose.imaging.yml
 /containers/amqp-service/.env
+/containers/amqp-service/service/service.bal
