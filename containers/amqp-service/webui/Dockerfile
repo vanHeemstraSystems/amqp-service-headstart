@@ -9,3 +9,10 @@ ARG PROXY_PORT
 
 #ENV HTTP_PROXY="http://${PROXY_USER}:${PROXY_PASSWORD}@${PROXY_FQDN}:${PROXY_PORT}"
 #ENV HTTPS_PROXY="http://${PROXY_USER}:${PROXY_PASSWORD}@${PROXY_FQDN}:${PROXY_PORT}"
+
+RUN npm install express
+RUN npm install redis
+COPY static/ /static/
+COPY server.js /
+CMD ["node", "server.js"]
+EXPOSE 80
