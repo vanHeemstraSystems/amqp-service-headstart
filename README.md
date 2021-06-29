@@ -123,7 +123,15 @@ Hello World!
 6. Clean up the used artifacts.
 
 ```
+Stop / kill running docker container
+ > docker kill 32461676d3c2
+ 32461676d3c2
 
+ Remove docker container files
+ > docker em 32461676d3c2
+
+ Remove docker image
+ > docker rmi e48123737a65
 ```
 
 Creating a Custom Ballerina Docker Image ...
