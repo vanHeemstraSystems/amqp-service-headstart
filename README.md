@@ -39,7 +39,7 @@ Steps to Run:
 
 ```
 $ cp sample.service.bal service.bal
-$ ballerina build service.bal
+$ bal build service.bal
 Compiling source
   service.bal
   
