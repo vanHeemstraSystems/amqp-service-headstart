@@ -90,6 +90,42 @@ The build process automatically generates a Dockerfile with the following conten
 
 2. Verify that the Docker image is created.
 
+```
+$ docker images
+ REPOSITORY          TAG         IMAGE ID            CREATED             SIZE
+ service_docker      latest      e48123737a65        7 minutes ago       134MB
+```
 
+Since the annotation is not configured to have a custom Docker image name and tag, the build process will create a Docker image with the default values: the file name of the generated .jar file with the ```latest``` tag (e.g., ```service_docker:latest```).
+
+3. Run the Docker image as a container (use the below command printed in step 1).
+
+```
+$ docker run -d -p 9090:9090 hello_world_docker:latest
+32461676d3c22848088390483a414e5b1d11a7a73c2296eccb18e6c9f27c41c0
+```
+
+4. Verify that the Docker container is running.
+
+```
+$ docker ps
+CONTAINER ID  IMAGE    		            COMMAND    	             CREATED              STATUS            PORTS                     NAMES
+32461676d3c2  service_docker:latest  "/bin/sh -c 'java -j…"   About a minute ago   Up About a minute 0.0.0.0:9090->9090/tcp    lucid_turing
+```
+
+5. Access the service with the cURL command.
+
+```
+$ curl http://localhost:9090/service/sayHello           
+Hello World!
+```
+
+6. Clean up the used artifacts.
+
+```
+
+```
+
+Creating a Custom Ballerina Docker Image ...
 
 more ...
