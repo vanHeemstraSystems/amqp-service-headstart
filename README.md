@@ -75,6 +75,48 @@ containers/amqp-service/
         http.bal (auto-created)
 ```
 
+***Tip***: See instructions on how to use Docker with Ballerina at https://ballerina.io/1.2/learn/deployment/docker/
+
+***Tip***: See an overview of the Standard Library of Ballerina at https://github.com/ballerina-platform/ballerina-standard-library
+
+Our service will be called ```http.bal``` and will look as follows (note: EP = EndPoint):
+```
+import ballerina/http;
+import ballerina/log;
+import ballerina/docker; ## not ballerinax/docker
+
+@docker:Expose {}
+listener http:Listener consumerEP = new(9091);
+map<json> messagesMap = {};
+
+@docker:Config {
+  Registry:"com.acme.consumer", name:"consumer", tag:"v1.0"
+}
+
+@http:ServiceConfig {
+  basePath: "/consumer"
+}
+
+service messages on consumerEP {
+  @http:ResourceConfig {
+    methods: ["GET"], path: "/consumer/{messageId}"
+  }
+
+  resource function getById(http:Caller caller, http:Request req, string messageId) {
+    json? payload = messagesMap[messageId];
+    http:Response response = new;
+    if (payload == null) {
+      response.statusCode = 404;
+      payload = "Item Not Found";
+    }
+    response.setJsonPayload(untaint payload);
+    var result = caller->respond(response);
+    if (result is error) {
+      log:printError("Error sending response", err = result);
+    }
+  }
+}
+```
 
 more ...
 
@@ -137,6 +179,18 @@ containers/amqp-service/
       http (auto-created)
         http.bal (auto-created)
 ```
+
+***Tip***: See instructions on how to use Docker with Ballerina at https://ballerina.io/1.2/learn/deployment/docker/
+
+***Tip***: See an overview of the Standard Library of Ballerina at https://github.com/ballerina-platform/ballerina-standard-library
+
+Our service will be called ```http.bal``` and will look as follows (note: EP = EndPoint):
+```
+
+
+```
+
+
 
 
 more ...
