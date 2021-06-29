@@ -24,7 +24,7 @@ $ cd containers/amqp-service/
 $ bal new consumer
 Created new Ballerina package 'consumer' at consumer.
 ```
-
+Look inside:
 ```
 $ cd consumer
 $ ls -la
@@ -54,7 +54,15 @@ $ cd consumer
 $ bal add http
 Added new ballerina module at 'modules/http'
 ```
-
+Look inside:
+```
+$ ls -la
+    Ballerina.toml (auto-created)
+    .gitignore (auto-created)
+    main.bal (auto-created)
+    modules
+      http
+```
 
 
 
@@ -69,7 +77,7 @@ $ cd containers/amqp-service/
 $ bal new publisher
 Created new Ballerina package 'publisher' at publisher.
 ```
-
+Look inside:
 ```
 $ cd consumer
 $ ls -la
@@ -99,7 +107,15 @@ $ cd publisher
 $ bal add http
 Added new ballerina module at 'modules/http'
 ```
-
+Look inside:
+```
+$ ls -la
+    Ballerina.toml (auto-created)
+    .gitignore (auto-created)
+    main.bal (auto-created)
+    modules
+      http
+```
 
 
 
