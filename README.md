@@ -48,6 +48,15 @@ $ cd consumer
 $ bal init
 ballerina: Directory is already a ballerina project
 ```
+To also create our first module 'http', if starting from fresh use the following Ballerina command for creating a new ***module*** (here: ```http```):
+```
+$ cd consumer
+$ bal add http
+Added new ballerina module at 'modules/http'
+```
+
+
+
 
 more ...
 
@@ -84,6 +93,15 @@ $ cd publisher
 $ bal init
 ballerina: Directory is already a ballerina project
 ```
+To also create our first module 'http', if starting from fresh use the following Ballerina command for creating a new ***module*** (here: ```http```):
+```
+$ cd publisher
+$ bal add http
+Added new ballerina module at 'modules/http'
+```
+
+
+
 
 more ...
 
