@@ -63,7 +63,17 @@ $ ls -la
     modules
       http
 ```
-
+The directories now look as follows:
+```
+containers/amqp-service/
+  consumer (auto-created)
+    Ballerina.toml (auto-created)
+    .gitignore (auto-created)
+    main.bal (auto-created)
+    modules (auto-created)
+      http (auto-created)
+        http.bal (auto-created)
+```
 
 
 more ...
@@ -116,7 +126,17 @@ $ ls -la
     modules
       http
 ```
-
+The directories now look as follows:
+```
+containers/amqp-service/
+  publisher (auto-created)
+    Ballerina.toml (auto-created)
+    .gitignore (auto-created)
+    main.bal (auto-created)
+    modules (auto-created)
+      http (auto-created)
+        http.bal (auto-created)
+```
 
 
 more ...
