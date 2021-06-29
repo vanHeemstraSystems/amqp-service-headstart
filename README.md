@@ -25,6 +25,15 @@ $ bal new consumer
 Created new Ballerina package 'consumer' at consumer.
 ```
 
+```
+$ cd consumer
+$ ls -la
+.
+..
+Ballerina.toml
+.gitignore
+main.bal
+```
 
 more ...
 
@@ -38,6 +47,15 @@ $ bal new publisher
 Created new Ballerina package 'publisher' at publisher.
 ```
 
+```
+$ cd consumer
+$ ls -la
+.
+..
+Ballerina.toml
+.gitignore
+main.bal
+```
 
 more ...
 
