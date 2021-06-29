@@ -119,6 +119,13 @@ service messages on consumerEP {
 ```
 containers/amqp-service/consumer/modules/http/http.bal
 
+We import the Ballerina utility libraries: docker, http and log. Using this code as a reference, let's focus on the key parts of this service:
+
+- We configure our service to listen to the requests arriving at port 9091 within the context of the /consumer URL.
+
+- We link a resource to the service: one that listens for the GET method which expects an identifier in the URL.
+
+- The GET method will return response code 200 and the object associated with the identifier posted in the URL, or 404 if the object is not found.
 
 
 
@@ -231,6 +238,14 @@ service messages on publisherEP {
 }
 ```
 containers/amqp-service/publisher/modules/http/http.bal
+
+We import the Ballerina utility libraries: docker, http and log. Using this code as a reference, let's focus on the key parts of this service:
+
+- We configure our service to listen to the requests arriving at port 9091 within the context of the /publisher URL.
+
+- We link a resource to the service: one that listens for the POST method, which expects a JSON object as a message.
+
+- The POST method will store the JSON object in a map in the internal memory and respond 201 and a header containing the URL of our service if we want to retrieve the stored message.
 
 
 
