@@ -42,7 +42,12 @@ containers/amqp-service/
     .gitignore (auto-created)
     main.bal (auto-created)
 ```
-
+In order to ***initialize*** the project, we will have to execute the following command from the main folder.
+```
+$ cd consumer
+$ bal init
+ballerina: Directory is already a ballerina project
+```
 
 more ...
 
@@ -73,7 +78,12 @@ containers/amqp-service/
     .gitignore (auto-created)
     main.bal (auto-created)
 ```
-
+In order to ***initialize*** the project, we will have to execute the following command from the main folder.
+```
+$ cd publisher
+$ bal init
+ballerina: Directory is already a ballerina project
+```
 
 more ...
 
