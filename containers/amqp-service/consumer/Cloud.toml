@@ -1,0 +1,6 @@
+# Before you build the package, we are going to override some of the default values taken by the compiler,
+
+[container.image]
+repository="com.acme.consumer"
+name="consumer"
+tag="v0.1.0"
