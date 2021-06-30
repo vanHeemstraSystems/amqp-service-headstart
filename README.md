@@ -140,6 +140,33 @@ We import the Ballerina utility libraries: docker, http and log. Using this code
 - The GET method will return response code 200 and the object associated with the identifier posted in the URL, or 404 if the object is not found.
 
 
+In order to create an image linked to our service that is handled by Docker we will need to keep the following aspects of the code above in mind:
+
+- We have indicated the service port to expose to the outside world.
+
+- We have included the configuration of the image to be created.
+
+In order to create the image we will need to execute the following command from ***outside*** the project directory (here: consumer):
+
+```
+$ ls -la
+consumer
+$ bal build consumer
+Compiling source
+  <user>/consumer:0.1.0
+  
+Generating executable
+  consumer/target/bin/consumer.jar
+```
+
+***Note***: If not already in existence an new project sub-directory called ```target``` is created inside of which the executable is stored (```bin/consumer.jar```).
+
+And we can start our service thanks to Docker using the following command:
+
+```$ docker run -d -p 9091:9091 com.acme.consumer/consumer:v1.0```
+
+***Note***: Docker needs to have been installed for the above command to succeed.
+
 
 more ...
 
@@ -270,6 +297,27 @@ We import the Ballerina utility libraries: docker, http and log. Using this code
 - We link a resource to the service: one that listens for the POST method, which expects a JSON object as a message.
 
 - The POST method will store the JSON object in a map in the internal memory and respond 201 and a header containing the URL of our service if we want to retrieve the stored message.
+
+In order to create the image we will need to execute the following command from ***outside*** the project directory (here: publisher):
+
+```
+$ ls -la
+publisher
+$ bal build publisher
+Compiling source
+  <user>/publisher:0.1.0
+  
+Generating executable
+  publisher/target/bin/publisher.jar
+```
+
+***Note***: If not already in existence an new project sub-directory called ```target``` is created inside of which the executable is stored (```bin/publisher.jar```).
+
+And we can start our service thanks to Docker using the following command:
+
+```$ docker run -d -p 9091:9091 com.acme.publisher/publisher:v1.0```
+
+***Note***: Docker needs to have been installed for the above command to succeed.
 
 
 
