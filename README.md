@@ -90,7 +90,7 @@ public function hello() {
 ```
 containers/amqp-service/consumer/modules/http/http.bal
 
-We will modify the http.bal to the content as follows (note: EP = EndPoint):
+We will modify the ```http.bal``` to the content as follows (note: EP = EndPoint):
 
 ```
 import ballerina/http;
@@ -245,7 +245,7 @@ public function hello() {
 ```
 containers/amqp-service/publisher/modules/http/http.bal
 
-We will modify the http.bal to the content as follows (note: EP = EndPoint):
+We will modify the ```http.bal``` to the content as follows (note: EP = EndPoint):
 
 ```
 import ballerina/http;
