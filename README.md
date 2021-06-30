@@ -87,6 +87,15 @@ tag="v0.1.0"
 ```
 containers/amqp-service/consumer/Cloud.toml
 
+Add a build option to ```Ballerina.toml``` to specify if it needs to create Kubernetes (incl. Docker) artifacts (```cloud = "k8s"```) or Docker artifacts only (```cloud = "docker"```):
+
+```
+[build-options]
+observabilityIncluded = true
+cloud = "k8s"
+```
+containers/amqp-service/consumer/Ballerina.toml
+
 ***Tip***: See instructions on how to use Docker / Kubernetes with Ballerina at https://ballerina.io/learn/user-guide/deployment/code-to-cloud/
 
 ***Tip***: See an overview of the Standard Library of Ballerina at https://github.com/ballerina-platform/ballerina-standard-library
@@ -253,6 +262,15 @@ name="publisher"
 tag="v0.1.0"
 ```
 containers/amqp-service/publisher/Cloud.toml
+
+Add a build option to ```Ballerina.toml``` to specify if it needs to create Kubernetes (incl. Docker) artifacts (```cloud = "k8s"```) or Docker artifacts only (```cloud = "docker"```):
+
+```
+[build-options]
+observabilityIncluded = true
+cloud = "k8s"
+```
+containers/amqp-service/consumer/Ballerina.toml
 
 ***Tip***: See instructions on how to use Docker / Kubernetes with Ballerina at https://ballerina.io/learn/user-guide/deployment/code-to-cloud/
 
