@@ -92,9 +92,12 @@ Add a build option to ```Ballerina.toml``` to specify if it needs to create Kube
 ```
 [build-options]
 observabilityIncluded = true
-cloud = "k8s"
+cloud = "docker"
 ```
 containers/amqp-service/consumer/Ballerina.toml
+
+***Note***: We have chosen to use ```cloud = "docker"``` instead of ```cloud = "k8s"``` in ```Ballerina.toml```, because we have not installed kubectl.
+
 
 ***Tip***: See instructions on how to use Docker / Kubernetes with Ballerina at https://ballerina.io/learn/user-guide/deployment/code-to-cloud/
 
@@ -268,9 +271,12 @@ Add a build option to ```Ballerina.toml``` to specify if it needs to create Kube
 ```
 [build-options]
 observabilityIncluded = true
-cloud = "k8s"
+cloud = "docker"
 ```
 containers/amqp-service/consumer/Ballerina.toml
+
+***Note***: We have chosen to use ```cloud = "docker"``` instead of ```cloud = "k8s"``` in ```Ballerina.toml```, because we have not installed kubectl.
+
 
 ***Tip***: See instructions on how to use Docker / Kubernetes with Ballerina at https://ballerina.io/learn/user-guide/deployment/code-to-cloud/
 
