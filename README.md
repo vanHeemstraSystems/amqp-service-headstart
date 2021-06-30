@@ -79,7 +79,19 @@ containers/amqp-service/
 
 ***Tip***: See an overview of the Standard Library of Ballerina at https://github.com/ballerina-platform/ballerina-standard-library
 
-Our service will be called ```http.bal``` and will look as follows (note: EP = EndPoint):
+Our service will be called ```http.bal``` and will look as follows (note: EP = EndPoint) when first generated:
+
+```
+import ballerina/io;
+
+public function hello() {
+    io:println("Hello World!");
+}
+```
+containers/amqp-service/consumer/modules/http/http.bal
+
+We will modify the http.bal to the content as follows:
+
 ```
 import ballerina/http;
 import ballerina/log;
@@ -196,6 +208,18 @@ containers/amqp-service/
 ***Tip***: See an overview of the Standard Library of Ballerina at https://github.com/ballerina-platform/ballerina-standard-library
 
 Our service will be called ```http.bal``` and will look as follows (note: EP = EndPoint):
+
+```
+import ballerina/io;
+
+public function hello() {
+    io:println("Hello World!");
+}
+```
+containers/amqp-service/publisher/modules/http/http.bal
+
+We will modify the http.bal to the content as follows:
+
 ```
 import ballerina/http;
 import ballerina/log;
