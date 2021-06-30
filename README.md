@@ -75,7 +75,19 @@ containers/amqp-service/
         http.bal (auto-created)
 ```
 
-***Tip***: See instructions on how to use Docker with Ballerina at https://ballerina.io/1.2/learn/deployment/docker/
+For making use of containerization add the file 'Cloud.toml' to the directory with the following content:
+
+```
+# Before you build the package, we are going to override some of the default values taken by the compiler,
+
+[container.image]
+repository="com.acme.consumer"
+name="consumer"
+tag="v0.1.0"
+```
+containers/amqp-service/consumer/Cloud.toml
+
+***Tip***: See instructions on how to use Docker / Kubernetes with Ballerina at https://ballerina.io/learn/user-guide/deployment/code-to-cloud/
 
 ***Tip***: See an overview of the Standard Library of Ballerina at https://github.com/ballerina-platform/ballerina-standard-library
 
@@ -230,7 +242,19 @@ containers/amqp-service/
         http.bal (auto-created)
 ```
 
-***Tip***: See instructions on how to use Docker with Ballerina at https://ballerina.io/1.2/learn/deployment/docker/
+For making use of containerization add the file 'Cloud.toml' to the directory with the following content:
+
+```
+# Before you build the package, we are going to override some of the default values taken by the compiler,
+
+[container.image]
+repository="com.acme.publisher"
+name="publisher"
+tag="v0.1.0"
+```
+containers/amqp-service/publisher/Cloud.toml
+
+***Tip***: See instructions on how to use Docker / Kubernetes with Ballerina at https://ballerina.io/learn/user-guide/deployment/code-to-cloud/
 
 ***Tip***: See an overview of the Standard Library of Ballerina at https://github.com/ballerina-platform/ballerina-standard-library
 
