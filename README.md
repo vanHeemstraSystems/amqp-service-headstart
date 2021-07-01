@@ -27,7 +27,7 @@ $ kubectl version --client
 See https://github.com/ballerina-platform/module-ballerina-c2c
 
 1. Download and install JDK 11
-2. Export github personal access token & user name as environment variables.
+2. Export github personal access token & user name as environment variables, see https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token.
 ```
     export packagePAT=<Token>
     export packageUser=<username>
