@@ -32,7 +32,7 @@ See https://github.com/ballerina-platform/module-ballerina-c2c
     export packagePAT=<Token>
     export packageUser=<username>
 ```
-3. (optional) Specify the Java home path for JDK 11 ie;
+3. (optional) Specify the Java home path for JDK 11 ie, see https://computingforgeeks.com/how-to-set-java_home-on-centos-fedora-rhel/;
 ```
     export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/
 ```
