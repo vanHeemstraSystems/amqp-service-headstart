@@ -21,7 +21,28 @@ $ sudo mv ./kubectl /usr/local/bin/kubectl
 $ kubectl version --client
 ```
 
-## 300 - Containers
+## 300 - Install Ballerina module Code to Cloud (c2c)
+
+See https://github.com/ballerina-platform/module-ballerina-c2c
+
+1. Download and install JDK 11
+2. Export github personal access token & user name as environment variables.
+```
+    export packagePAT=<Token>
+    export packageUser=<username>
+```
+3. (optional) Specify the Java home path for JDK 11 ie;
+```
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/
+```
+4. Install Docker
+5. Get a clone or download the source from this repository (https://github.com/ballerina-platform/module-ballerina-c2c)
+6. Run the Gradle command gradle build from within the module-ballerina-c2c directory.
+7. Copy ```c2c-extension/build/c2c-extension-***.jar``` file to ```<BALLERINA_HOME>/bre/lib``` directory.
+8. Copy ```c2c-ballerina/build/target/c2c-ballerina-zip/bala/ballerina/cloud``` directory to ```<BALLERINA_HOME>/repo/bala/ballerina``` directory.
+9. Copy ```c2c-ballerina/build/target/c2c-ballerina-zip/cache/ballerina/cloud``` directory to ```<BALLERINA_HOME>/repo/cache/ballerina``` directory.
+
+## 400 - Containers
 
 ### 100 - WebUI
 
