@@ -34,8 +34,24 @@ See https://github.com/ballerina-platform/module-ballerina-c2c
 ```
 3. (optional) Specify the Java home path for JDK 11 ie, see https://computingforgeeks.com/how-to-set-java_home-on-centos-fedora-rhel/;
 ```
-    export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/
+    export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-11.0.11.0.9-1.el7_9.x86_64
 ```
+
+In short, add the following to your ```.bash_profile```:
+
+```
+PATH=$PATH:$HOME/.local/bin:$HOME/bin
+
+PATH=$PATH:/opt/gradle/gradle-3.4.1/bin
+
+export JAVA_HOME=$(dirname $(dirname $(readlink $(readlink $(which javac)))))
+export PATH=$PATH:$JAVA_HOME/bin
+export CLASSPATH=.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
+
+export packagePAT=*****SECRET*****
+export packageUser=willem-vanheemstrasystems
+```
+
 4. Install Docker
 5. Get a clone or download the source from this repository (https://github.com/ballerina-platform/module-ballerina-c2c)
 6. Run the Gradle command ```gradle build``` from within the module-ballerina-c2c directory.
