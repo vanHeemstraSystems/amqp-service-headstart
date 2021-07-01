@@ -10,8 +10,18 @@ Based on "Running a Ballerina Service in a Docker Container" at https://ballerin
 - Ballerina, see https://ballerina.io/1.2/learn/installing-ballerina/ or https://github.com/vanHeemstraSystems/ballerina-headstart/blob/main/100/200/300/README.md
 - Docker Engine
 - Docker Compose
+- Kubectl
 
-## 200 - Containers
+## 200 - Install kubectl
+
+```
+$ curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
+$ chmod +x ./kubectl
+$ sudo mv ./kubectl /usr/local/bin/kubectl
+$ kubectl version --client
+```
+
+## 300 - Containers
 
 ### 100 - WebUI
 
