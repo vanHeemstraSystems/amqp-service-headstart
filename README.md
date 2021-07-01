@@ -10,6 +10,7 @@ Based on "Running a Ballerina Service in a Docker Container" at https://ballerin
 - Ballerina, see https://ballerina.io/1.2/learn/installing-ballerina/ or https://github.com/vanHeemstraSystems/ballerina-headstart/blob/main/100/200/300/README.md
 - Docker Engine
 - Docker Compose
+- Gradle
 - Kubectl
 
 ## 200 - Install kubectl
@@ -37,7 +38,7 @@ See https://github.com/ballerina-platform/module-ballerina-c2c
 ```
 4. Install Docker
 5. Get a clone or download the source from this repository (https://github.com/ballerina-platform/module-ballerina-c2c)
-6. Run the Gradle command gradle build from within the module-ballerina-c2c directory.
+6. Run the Gradle ```command gradle``` build from within the module-ballerina-c2c directory.
 7. Copy ```c2c-extension/build/c2c-extension-***.jar``` file to ```<BALLERINA_HOME>/bre/lib``` directory.
 8. Copy ```c2c-ballerina/build/target/c2c-ballerina-zip/bala/ballerina/cloud``` directory to ```<BALLERINA_HOME>/repo/bala/ballerina``` directory.
 9. Copy ```c2c-ballerina/build/target/c2c-ballerina-zip/cache/ballerina/cloud``` directory to ```<BALLERINA_HOME>/repo/cache/ballerina``` directory.
