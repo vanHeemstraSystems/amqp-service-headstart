@@ -53,14 +53,14 @@ export packageUser=willem-vanheemstrasystems
 ```
 
 4. Install Docker, see https://github.com/vanHeemstraSystems/docker-quick-start-headstart
-5. Get a clone or download the source from this repository:
+5. Get a clone or download the source from this repository: [OPTIONAL]
 ```
 git clone https://github.com/ballerina-platform/module-ballerina-c2c
 ```
-7. Run the Gradle command ```./gradlew build``` from within the module-ballerina-c2c directory. ***Note***: we use the command for a ***local*** Gradle, not ```gradle build```
-8. Copy ```c2c-extension/build/c2c-extension-***.jar``` file to ```<BALLERINA_HOME>/bre/lib``` directory.
-9. Copy ```c2c-ballerina/build/target/c2c-ballerina-zip/bala/ballerina/cloud``` directory to ```<BALLERINA_HOME>/repo/bala/ballerina``` directory.
-10. Copy ```c2c-ballerina/build/target/c2c-ballerina-zip/cache/ballerina/cloud``` directory to ```<BALLERINA_HOME>/repo/cache/ballerina``` directory.
+7. Run the Gradle command ```./gradlew build``` from within the module-ballerina-c2c directory. ***Note***: we use the command for a ***local*** Gradle, not ```gradle build``` [OPTIONAL]
+8. Copy ```c2c-extension/build/c2c-extension-***.jar``` file to ```<BALLERINA_HOME>/bre/lib``` directory. [OPTIONAL]
+9. Copy ```c2c-ballerina/build/target/c2c-ballerina-zip/bala/ballerina/cloud``` directory to ```<BALLERINA_HOME>/repo/bala/ballerina``` directory. [OPTIONAL]
+10. Copy ```c2c-ballerina/build/target/c2c-ballerina-zip/cache/ballerina/cloud``` directory to ```<BALLERINA_HOME>/repo/cache/ballerina``` directory. [OPTIONAL]
 
 ## 400 - Containers
 
@@ -233,6 +233,20 @@ Compiling source
 Generating executable
   consumer/target/bin/consumer.jar
 ```
+
+***WARNING***: Above command fails:
+
+```
+$ bal build consumer
+Compiling source
+        cloud_user/consumer:0.1.0
+Generating executable
+Generating artifacts...
+error [k8s plugin]: module [cloud_user/consumer:0.1.0] unable to build docker image: could not build image: failed to export image: failed to create image: failed to get layer sha256:18cf22e3c1d3ceb25b360fe0642ebf8b5f3ed32b2bfaaadbc1ae18e6dc3ef8f3: layer does not exist
+        consumer/target/bin/consumer.jar
+```
+
+***TO DO***: Have a look at working examples at https://github.com/ballerina-platform/ballerina-dev-website/blob/master/learn/user-guide/deployment/code-to-cloud/code-to-cloud-samples.md
 
 ***Note***: If not already in existence an new project sub-directory called ```target``` is created inside of which the executable is stored (```bin/consumer.jar```).
 
