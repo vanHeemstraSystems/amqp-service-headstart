@@ -10,10 +10,10 @@ Based on "Running a Ballerina Service in a Docker Container" at https://ballerin
 - Ballerina, see https://ballerina.io/1.2/learn/installing-ballerina/ or https://github.com/vanHeemstraSystems/ballerina-headstart/blob/main/100/200/300/README.md
 - Docker Engine
 - Docker Compose
-- Gradle, see https://www.vultr.com/docs/how-to-install-gradle-on-centos-7
-- Kubectl
+- [OPTIONAL] Gradle, see https://www.vultr.com/docs/how-to-install-gradle-on-centos-7
+- [OPTIONAL] Kubectl
 
-## 200 - Install kubectl
+## 200 - Install kubectl [OPTIONAL]
 
 ```
 $ curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
@@ -22,7 +22,7 @@ $ sudo mv ./kubectl /usr/local/bin/kubectl
 $ kubectl version --client
 ```
 
-## 300 - Install Ballerina module Code to Cloud (c2c)
+## 300 - Install Ballerina module Code to Cloud (c2c) [OPTIONAL]
 
 See https://github.com/ballerina-platform/module-ballerina-c2c
 
@@ -256,7 +256,7 @@ Created new Ballerina package 'publisher' at publisher.
 ```
 Look inside:
 ```
-$ cd consumer
+$ cd publisher
 $ ls -la
 .
 ..
