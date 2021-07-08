@@ -248,6 +248,32 @@ error [k8s plugin]: module [cloud_user/consumer:0.1.0] unable to build docker im
 
 ***TO DO***: Have a look at an issue raised that may have the same cause as the failure above: https://github.com/moby/moby/issues/36573
 
+***Attempt 1: to solve the failure***:
+
+Run ```sync``` as root:
+
+```
+$ sudo sync
+```
+
+Try again:
+
+```
+$ bal build consumer
+```
+
+Outcome: Same failure occurs, so above is not the solution.
+
+***Attempt 2: to solve the failure***:
+
+=  WE ARE HERE  =
+
+
+
+
+
+
+
 ***TO DO***: Have a look at working examples at https://github.com/ballerina-platform/ballerina-dev-website/blob/master/learn/user-guide/deployment/code-to-cloud/code-to-cloud-samples.md
 
 ***Note***: If not already in existence an new project sub-directory called ```target``` is created inside of which the executable is stored (```bin/consumer.jar```).
