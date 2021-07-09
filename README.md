@@ -274,6 +274,12 @@ First check if there is not already a group called 'docker'
 $ groups
 ```
 
+If the 'docker' group already exists, look if you are already a member:
+
+```
+$ groups docker
+```
+
 To create the docker group and add your user:
 
 Create the docker group.
