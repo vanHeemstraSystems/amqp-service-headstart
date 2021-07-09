@@ -328,6 +328,15 @@ $ sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
 $ sudo chmod g+rwx "$HOME/.docker" -R
  ```
 
+Now try again:
+
+```
+$ bal build --cloud=k8s
+```
+
+Outcome: still failes : (
+
+
 =  WE ARE HERE  =
 
 
