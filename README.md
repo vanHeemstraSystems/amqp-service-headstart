@@ -274,11 +274,13 @@ First check if there is not already a group called 'docker'
 $ groups
 ```
 
-If the 'docker' group already exists, look if you are already a member:
+If the 'docker' group already exists, look if you (here: cloud_user) are already a member:
 
 ```
-$ groups docker
+$ groups cloud_user
 ```
+
+If the 'docker' group does not already exist, create it.
 
 To create the docker group and add your user:
 
