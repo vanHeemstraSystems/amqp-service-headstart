@@ -268,14 +268,26 @@ Outcome: Same failure occurs, so above is not the solution.
 
 Follow the instructions at https://docs.docker.com/engine/install/linux-postinstall/ to add the current user (here: wheemstr) to the 'docker' group.
 
+First check if there is not already a group called 'docker'
+
+```
+$ groups
+```
+
 To create the docker group and add your user:
 
 Create the docker group.
 
- sudo groupadd docker
+```
+$ sudo groupadd docker
+```
+
 Add your user to the docker group.
 
- sudo usermod -aG docker $USER
+```
+$ sudo usermod -aG docker $USER
+``` 
+ 
 Log out and log back in so that your group membership is re-evaluated.
 
 If testing on a virtual machine, it may be necessary to restart the virtual machine for changes to take effect.
