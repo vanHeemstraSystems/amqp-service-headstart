@@ -298,7 +298,7 @@ $ sudo netstat -lnp | grep 9090
 tcp6       0      0 :::9090                 :::*                    LISTEN      1/systemd
 ```
 
-Retry Docker run with a different Docker host port (now 9092) as the 9090 is already in use by the Docker host:
+Retry Docker run with a different Docker host port (now ***9092***) as the 9090 is already in use by the Docker host:
 
 ```
 $ docker run -d -p 9092:9090 com.acme.consumer/consumer:v0.1.0
