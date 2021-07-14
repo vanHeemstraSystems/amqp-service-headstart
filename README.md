@@ -261,7 +261,19 @@ $ bal build consumer
 If successfull, you will see after a while:
 
 ```
+Compiling source
+        cloud_user/consumer:0.1.0
 
+Generating executable
+
+Generating artifacts...
+
+        @kubernetes:Docker                       - complete 2/2 
+
+        Execute the below command to run the generated docker image: 
+        docker run -d -p 9090:9090 com.acme.consumer/consumer:v0.1.0
+
+        consumer/target/bin/consumer.jar
 ```
 
 More ...
