@@ -246,14 +246,10 @@ error [k8s plugin]: module [cloud_user/consumer:0.1.0] unable to build docker im
         consumer/target/bin/consumer.jar
 ```
 
-***TO DO***: Have a look at an issue raised that may have the same cause as the failure above: https://github.com/moby/moby/issues/36573
-
-***Attempt 1: to solve the failure***:
-
-Run ```sync``` as root:
+***RESOLUTION***: Set the following environment variable ***before*** executing the command.
 
 ```
-$ sudo sync
+$ export CI_BUILD=true
 ```
 
 Try again:
@@ -262,82 +258,13 @@ Try again:
 $ bal build consumer
 ```
 
-Outcome: Same failure occurs, so above is not the solution.
-
-***Attempt 2: to solve the failure***:
-
-Follow the instructions at https://docs.docker.com/engine/install/linux-postinstall/ to add the current user (here: wheemstr) to the 'docker' group.
-
-First check if there is not already a group called 'docker'
+If successfull, you will see after a while:
 
 ```
-$ groups
-```
-
-If the 'docker' group already exists, look if you (here: cloud_user) are already a member:
 
 ```
-$ groups cloud_user
-```
 
-If the 'docker' group does not already exist, create it.
-
-To create the docker group and add your user:
-
-Create the docker group.
-
-```
-$ sudo groupadd docker
-```
-
-Add your user to the docker group.
-
-```
-$ sudo usermod -aG docker $USER
-``` 
- 
-Log out and log back in so that your group membership is re-evaluated.
-
-If testing on a virtual machine, it may be necessary to restart the virtual machine for changes to take effect.
-
-On a desktop Linux environment such as X Windows, log out of your session completely and then log back in.
-
-On Linux, you can also run the following command to activate the changes to groups:
-
-```
-$ newgrp docker 
-```
-
-Verify that you can run docker commands without sudo.
-
-```
-$ docker run hello-world
-``` 
- 
-This command downloads a test image and runs it in a container. When the container runs, it prints an informational message and exits.
-
-If you initially ran Docker CLI commands using sudo before adding your user to the docker group, you may see the following error, which indicates that your ~/.docker/ directory was created with incorrect permissions due to the sudo commands.
-
-WARNING: Error loading config file: /home/user/.docker/config.json -
-stat /home/user/.docker/config.json: permission denied
-
-To fix this problem, either remove the ~/.docker/ directory (it is recreated automatically, but any custom settings are lost), or change its ownership and permissions using the following commands:
-
-```
-$ sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
-$ sudo chmod g+rwx "$HOME/.docker" -R
- ```
-
-Now try again:
-
-```
-$ bal build --cloud=k8s
-```
-
-Outcome: still failes : (
-
-
-=  WE ARE HERE  =
+More ...
 
 
 
