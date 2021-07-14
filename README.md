@@ -294,10 +294,9 @@ docker: Error response from daemon: driver failed programming external connectiv
 ***OOOPS***: Check what other process may already be running on port 9090
 
 ```
-$ netstat -lnp | grep 9090
-(Not all processes could be identified, non-owned process info
- will not be shown, you would have to be root to see it all.)
-tcp6       0      0 :::9090                 :::*                    LISTEN      -
+$ sudo netstat -lnp | grep 9090
+[sudo] password for cloud_user: 
+tcp6       0      0 :::9090                 :::*                    LISTEN      1/systemd
 ```
 
 Turns out [Cockpit](https://github.com/vanHeemstraSystems/cockpit-headstart) was running on port 9090.
@@ -315,19 +314,27 @@ Warning: Stopping cockpit.service, but it can still be activated by:
   cockpit.socket
 ```
 
-Retry Docker run:
+Retry Docker run with a different Docker host port (now 9092) as the 9090 is already in use by the Docker host:
 
 ```
-$ docker run -d -p 9090:9090 com.acme.consumer/consumer:v0.1.0
-
-
+$ docker run -d -p 9092:9090 com.acme.consumer/consumer:v0.1.0
+70d9056d5b667129d3c74f67563f527be51cb2d024e93269538babafd59b8e46
 ```
 
 Check running Docker containers again:
 
 ```
 $ docker ps
+CONTAINER ID   IMAGE                               COMMAND                  CREATED         STATUS         PORTS                                       NAMES
+70d9056d5b66   com.acme.consumer/consumer:v0.1.0   "/bin/sh -c 'java -X…"   5 seconds ago   Up 4 seconds   0.0.0.0:9092->9090/tcp, :::9092->9090/tcp   charming_goodall
+```
 
+SUCCESS!!
+
+See if the container works as expected:
+
+```
+$ 
 ```
 
 More ...
