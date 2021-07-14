@@ -315,10 +315,11 @@ CONTAINER ID   IMAGE                               COMMAND                  CREA
 
 SUCCESS!!
 
-See if the container works as expected:
+See if the container works as expected (replaced ```localhost``` by Public IPv4 ```18.133.141.101``` for server on A Cloud Guru):
 
 ```
-$ 
+$ curl http://18.133.141.101:9092/../..
+
 ```
 
 More ...
