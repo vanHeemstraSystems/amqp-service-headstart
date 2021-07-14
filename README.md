@@ -299,21 +299,6 @@ $ sudo netstat -lnp | grep 9090
 tcp6       0      0 :::9090                 :::*                    LISTEN      1/systemd
 ```
 
-Turns out [Cockpit](https://github.com/vanHeemstraSystems/cockpit-headstart) was running on port 9090.
-
-For now, stop Cockpit:
-
-```
-$ $ systemctl stop cockpit
-==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ===
-Authentication is required to manage system services or units.
-Authenticating as: cloud_user
-Password: 
-==== AUTHENTICATION COMPLETE ===
-Warning: Stopping cockpit.service, but it can still be activated by:
-  cockpit.socket
-```
-
 Retry Docker run with a different Docker host port (now 9092) as the 9090 is already in use by the Docker host:
 
 ```
