@@ -276,6 +276,33 @@ Generating artifacts...
         consumer/target/bin/consumer.jar
 ```
 
+Optionally, check for any running Docker containers:
+
+```
+$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+```
+
+Now execute the command as prompted in previous outcome:
+
+```
+$ docker run -d -p 9090:9090 com.acme.consumer/consumer:v0.1.0
+7a6f6816ff91274e085338172e09501c90fc53180f7d95981accbebaef4388db
+docker: Error response from daemon: driver failed programming external connectivity on endpoint romantic_khorana (c0a1fc8378969108ced8c743da7166f4e4b77d67aba74c90541acadaa89b1f6f): Error starting userland proxy: listen tcp4 0.0.0.0:9090: bind: address already in use.
+```
+
+***OOOPS***: Check what other process may already be running on port 9090
+
+TO DO ...
+
+
+Check running Docker containers again:
+
+```
+$ docker ps
+
+```
+
 More ...
 
 
